@@ -8,14 +8,12 @@ import css from '../index.css'
 
 
 export function App() {
-  const [contacts, setContacts] = useState(
-  JSON.parse(window.localStorage.getItem('contacts')) ?? []);
+  const [contacts, setContacts] = useState(()=> JSON.parse(window.localStorage.getItem('contacts')) ?? []);
 
 
   const [filter, setFilter] =  useState('')
 
   useEffect(() => {
-    console.log('useEffect')
     window.localStorage.setItem('contacts', JSON.stringify(contacts))
   }, [contacts])
 

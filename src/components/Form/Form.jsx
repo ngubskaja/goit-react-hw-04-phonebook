@@ -1,4 +1,5 @@
 import  { useState} from "react";
+import PropTypes from 'prop-types';
 import css from '../Form/Form.module.css';
 
 
@@ -57,3 +58,10 @@ export function Form({ onSubmit })  {
           </form>
     )
 }
+
+
+Form.propTypes = {
+  name:PropTypes.string,
+  number:PropTypes.number,
+  onSubmit: PropTypes.func.isRequired,
+};
